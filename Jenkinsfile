@@ -9,9 +9,9 @@
  *
  */
 
-@Library('dragons_ci_local@master') import gemini.dragons.*
+@Library('dragons_ci_local@master') import gemini.dragons.Point
 
-def point = new Point.Point()
+def point = new Point()
 
 pipeline {
 
