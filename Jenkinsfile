@@ -12,7 +12,7 @@
 @Library('dragons_ci_local@master') import gemini.dragons.*
 
 
-def anaconda = new Anaconda(this)
+def anaconda = new Anaconda.Anaconda(this)
 
 
 pipeline {
