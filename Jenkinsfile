@@ -9,7 +9,7 @@
  *
  */
 
-@Library('dragons_ci_local@master') import gemini.dragons.Anaconda
+@Library('dragons_ci_local@master') import gemini.dragons.*
 
 def point = new Anaconda.Point()
 
