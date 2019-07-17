@@ -11,7 +11,7 @@
 
 @Library('dragons_ci_local@master') import gemini.dragons.*
 
-def anaconda = new Anaconda()
+def anaconda = new Anaconda(this)
 
 pipeline {
 

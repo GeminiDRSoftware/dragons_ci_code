@@ -5,10 +5,14 @@
  */
 package gemini.dragons
 
-class Anaconda {
+class Anaconda implements Serializable {
 
-    static def install(script) {
-        script.sh 'echo "I am running the install step"'
+    def steps
+
+    Anaconda(steps) {this.steps = steps}
+
+    def install() {
+        steps.sh 'echo "I am running the install step!!"'
     }
 
 }
