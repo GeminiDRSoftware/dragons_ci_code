@@ -8,6 +8,7 @@ def call() {
                 steps {
                     echo 'Master Pipeline - First Step'
                     echo 'Master Pipeline - Second Step'
+                    sh 'Test bash'
                 }
             }
         }
