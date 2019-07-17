@@ -4,14 +4,14 @@ def call() {
     pipeline {
         agent none
         stages {
-            stage('Main Pipeline') {
+            stage('Stage 1') {
                 steps {
                     echo 'Master Pipeline - First Step'
                     echo 'Master Pipeline - Second Step'
                     sh 'Test bash'
                 }
             }
-            stage('Main Pipeline') {
+            stage('Stage 2') {
                 steps {
                     echo 'Master Pipeline - First Step'
                     echo 'Master Pipeline - Second Step'
