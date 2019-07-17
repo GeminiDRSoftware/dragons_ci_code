@@ -11,7 +11,7 @@
 
 @Library('dragons_ci_local@master') import gemini.dragons.*
 
-def anaconda = Anaconoda
+def point = Anaconda.Point()
 
 pipeline {
 
