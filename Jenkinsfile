@@ -11,9 +11,11 @@
 
 @Library('dragons_ci@master') _
 
-when {
-  branch 'master'
-  }
-  steps {
-    masterPipeline
-  }
+pipeline {
+    when {
+        branch 'master'
+    }
+    steps {
+        masterPipeline
+    }
+}
