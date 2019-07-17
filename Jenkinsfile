@@ -39,7 +39,7 @@ pipeline {
         stage('Stage 1') {
             steps {
                 echo 'Running stage 1'
-                anaconda.install this
+                anaconda.install 
             }
         }
 
