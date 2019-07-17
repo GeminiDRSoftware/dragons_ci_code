@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-def call {
+def call(int buildNumber) {
     pipeline {
         agent any
         stages {
