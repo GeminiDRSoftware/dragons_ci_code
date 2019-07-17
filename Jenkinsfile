@@ -9,7 +9,7 @@
  *
  */
 
-@Library('dragons_ci_local@master') import gemini.dragons.*
+@Library('dragons_ci_local@master') _
 
 
 pipeline {
