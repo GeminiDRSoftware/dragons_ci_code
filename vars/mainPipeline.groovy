@@ -1,8 +1,8 @@
 #!/usr/bin/env groovy
 
-def call(int buildNumber) {
+def call(int build) {
     pipeline {
-        agent any
+        agent none
         stages {
             stage('Master Pipeline: Stage 1') {
                 steps {
