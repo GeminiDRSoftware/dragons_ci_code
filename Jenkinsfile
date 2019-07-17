@@ -9,6 +9,6 @@
  *
  */
 
-@Library('dragons_ci@master') _
+@Library('dragons_ci_local@master') _
 
 mainPipeline
