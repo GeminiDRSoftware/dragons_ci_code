@@ -5,12 +5,13 @@
  */
 package gemini.dragons
 
-class Anaconda implements Seriable {
+class Anaconda {
 
     def steps
+
     Anaconda(steps) {this.steps = steps}
 
-    def install(args) {
+    def install() {
         steps.sh 'echo "Trying this step"'
     }
 
