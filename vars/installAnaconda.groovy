@@ -8,5 +8,5 @@
  */
 
 def call() {
-    echo "I am being called!! o/"
+    echo "Install Anaconda"
 }

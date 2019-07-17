@@ -1,5 +1,0 @@
-<strong>anacondaInstall</strong>
-
-<p>
-    Check if Anaconda is installed. If not, install it.
-</p>
