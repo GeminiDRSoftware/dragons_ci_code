@@ -11,13 +11,4 @@
 
 @Library('dragons_ci@master') _
 
-pipeline {
-    agents any
-    
-    when {
-        branch 'master'
-    }
-    steps {
-        masterPipeline
-    }
-}
+masterPipeline
