@@ -3,10 +3,12 @@
  * Anaconda
  *
  */
- package gemini.dragons
+package gemini.dragons
 
- def checkOutFrom() {
-   echo 'Hello!!'
- }
+class Anaconda {
 
- return this
+    static def install(script) {
+        script.sh 'echo "I am running the install step"'
+    }
+
+}
