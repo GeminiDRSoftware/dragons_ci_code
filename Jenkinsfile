@@ -11,4 +11,4 @@
 
 @Library('dragons_ci@master') _
 
-masterPipeline(currentBuild.getNumber())
+mainPipeline
