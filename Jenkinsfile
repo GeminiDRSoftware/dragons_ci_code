@@ -9,10 +9,7 @@
  *
  */
 
-@Library('dragons_ci_local@master') import gemini.dragons.*
-
-
-def anaconda = new Anaconda.Anaconda(this)
+@Library('dragons_ci_local@master') _
 
 
 pipeline {
@@ -40,7 +37,7 @@ pipeline {
 
         stage('Stage 1') {
             steps {
-                anaconda.install
+                echo 'Running stage 1'
             }
         }
 
