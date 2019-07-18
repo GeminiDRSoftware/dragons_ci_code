@@ -43,11 +43,6 @@ pipeline {
             }
         }
 
-    } post {
-        always {
-            // slack.successful()
-            echo "Send message to slack"
-        }
     }
-
+    
 }
