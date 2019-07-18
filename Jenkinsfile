@@ -14,7 +14,7 @@
 
 pipeline {
 
-    agent none
+    agent any
 
     // Polls Source Code Manager every hour
     triggers {
@@ -37,10 +37,8 @@ pipeline {
 
         stage('Stage 1') {
             steps {
-                node {
                     checkout scm
                     installAnaconda()
-                }
             }
         }
 
