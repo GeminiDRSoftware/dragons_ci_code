@@ -42,10 +42,10 @@ pipeline {
             }
         }
 
-    } post {
-        always {
-            sendNotifications 'SUCCESSFUL'
-        }
-    }
+    } // post {
+    //     always {
+    //         sendNotifications 'SUCCESSFUL'
+    //     }
+    // }
 
 }
