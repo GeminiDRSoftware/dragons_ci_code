@@ -94,10 +94,15 @@ pipeline {
                 stage('build') {
                     stages {
                         stage('CentOS 6') {
-                            echo "conda build for CentOS 6"
+                            steps {
+                                echo "conda build for CentOS 6"
+                            }
+
                         }
                         stage('CentOS 7') {
-                            echo "conda build for CentOS 7"
+                            steps {
+                                echo "conda build for CentOS 7"    
+                            }
                         }
                     }
                 }
