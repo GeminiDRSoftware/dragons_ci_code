@@ -1,9 +1,8 @@
-#!/usr/bin/groovy
-/*
- * Send a message to Slack saying that the jobs has started
+#!/usr/bin/env groovy
+
+/**
+ * Send notifications based on build status string
  */
-
-
 def call(String buildStatus = 'STARTED') {
 
     // build status of null means successful
@@ -11,26 +10,22 @@ def call(String buildStatus = 'STARTED') {
 
     // Default values
     def color = 'RED'
-    def colorCode = '#FF0000'
+    def colorCode = '#cc0000'
     def subject = "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
     def summary = "${subject} (${env.BUILD_URL})"
-    def details = """
-        <p>${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
-        <p>Check console output at &QUOT;
-        <a href='${env.BUILD_URL}'>${env.JOB_NAME}
-        [${env.BUILD_NUMBER}]</a>&QUOT;</p>
-        """
+    def details = """<p>${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p><br>
+        <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>"""
 
     // Override default values based on build status
     if (buildStatus == 'STARTED') {
         color = 'YELLOW'
-        colorCode = '#FFFF00'
+        colorCode = '#ffcc00'
     } else if (buildStatus == 'SUCCESSFUL') {
         color = 'GREEN'
-        colorCode = '#00FF00'
+        colorCode = '#00cc00'
     }
 
     // Send notifications
     slackSend (color: colorCode, message: summary)
 
- }
+}
