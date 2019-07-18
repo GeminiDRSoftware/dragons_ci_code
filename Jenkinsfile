@@ -42,7 +42,9 @@ pipeline {
             }
         }
 
-    } post {
+    }
+
+    post {
         always {
             echo "This will run always"
         }
