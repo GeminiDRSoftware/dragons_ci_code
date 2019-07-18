@@ -1,0 +1,6 @@
+# PyCharm Config Files
+.idea
+pycharm-bash
+
+# MacOS Junk
+.DS_Store
