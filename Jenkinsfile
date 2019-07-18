@@ -50,6 +50,7 @@ pipeline {
             }
             steps {
                 echo 'run this stage - ony if the branch = master branch'
+                echo 'This branch will test '
             }
         }
 
@@ -73,16 +74,6 @@ pipeline {
             }
         }
 
-        stage('release branch stuff') {
-            agent any
-            when {
-                branch "release/*"
-            }
-            steps {
-                echo 'run this stage - only if the branch name started with release/'
-            }
-        }
-
         stage('stable branch stuff') {
             agent any
             when {
@@ -90,6 +81,26 @@ pipeline {
             }
             steps {
                 echo 'run this stage - ony if the branch = stable branch'
+            }
+        }
+
+        stage('release branch stuff') {
+
+            when {
+                branch "release/*"
+            }
+            failFast true
+            parallel {
+                stage('build') {
+                    stages {
+                        stage('CentOS 6') {
+                            echo "conda build for CentOS 6"
+                        }
+                        stage('CentOS 7') {
+                            echo "conda build for CentOS 7"
+                        }
+                    }
+                }
             }
         }
 
