@@ -37,6 +37,7 @@ pipeline {
 
         stage('Stage 1') {
             steps {
+                    sendNotifications 'SUCCESSFUL'
                     checkout scm
                     installAnaconda()
             }
