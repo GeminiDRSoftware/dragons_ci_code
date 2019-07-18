@@ -43,7 +43,7 @@ pipeline {
             }
         }
 
-        stage('master-branch-stuff') {
+        stage('master branch stuff') {
             agent any
             when {
                 branch 'master'
@@ -53,7 +53,7 @@ pipeline {
             }
         }
 
-        stage('feature-branch-stuff') {
+        stage('feature branch stuff') {
             agent any
             when {
                 branch "feature/*"
@@ -63,7 +63,7 @@ pipeline {
             }
         }
 
-        stage('hotfix-branch-stuff') {
+        stage('hotfix branch stuff') {
             agent any
             when {
                 branch "hotfix/*"
@@ -73,7 +73,7 @@ pipeline {
             }
         }
 
-        stage('release-branch-stuff') {
+        stage('release branch stuff') {
             agent any
             when {
                 branch "release/*"
@@ -83,7 +83,7 @@ pipeline {
             }
         }
 
-        stage('stable-branch-stuff') {
+        stage('stable branch stuff') {
             agent any
             when {
                 branch "stable"
