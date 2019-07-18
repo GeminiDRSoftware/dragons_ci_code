@@ -35,10 +35,61 @@ pipeline {
 
     stages {
 
-        stage('Stage 1') {
+        stage('First Stage') {
             steps {
-                    checkout scm
-                    installAnaconda()
+                    echo 'Step 1'
+                    echo 'Step 2'
+                    echo 'Step 3'
+            }
+        }
+
+        stage('master-branch-stuff') {
+            agent any
+            when {
+                branch 'master'
+            }
+            steps {
+                echo 'run this stage - ony if the branch = master branch'
+            }
+        }
+
+        stage('feature-branch-stuff') {
+            agent any
+            when {
+                branch "feature/*"
+            }
+            steps {
+                echo 'run this stage - only if the branch name started with feature/'
+            }
+        }
+
+        stage('hotfix-branch-stuff') {
+            agent any
+            when {
+                branch "hotfix/*"
+            }
+            steps {
+                echo 'run this stage - only if the branch name started with hotfix/'
+            }
+        }
+
+        stage('release-branch-stuff') {
+            agent any
+            when {
+                branch "release/*"
+            }
+            steps {
+                echo 'run this stage - only if the branch name started with release/'
+            }
+        }
+
+        stage('stable-branch-stuff') {
+            agent any
+            when {
+                branch "stable"
+            }
+            steps {
+                echo 'run this stage - ony if the branch = stable branch'
             }
         }
 
