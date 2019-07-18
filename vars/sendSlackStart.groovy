@@ -22,10 +22,10 @@ def sendNotifications(String buildStatus = 'STARTED') {
         """
 
     // Override default values based on build status
-    if (buildStatus == 'STARTED') {
+    if (buildStatus.equalsIgnoreCase('STARTED')) {
         color = 'YELLOW'
         colorCode = '#FFFF00'
-    } else if (buildStatus == 'SUCCESSFUL') {
+    } else if (buildStatus.equalsIgnoreCase('SUCCESSFUL')) {
         color = 'GREEN'
         colorCode = '#00FF00'
     }
