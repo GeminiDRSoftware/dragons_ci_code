@@ -37,12 +37,13 @@ pipeline {
 
         stage('Stage 1') {
             steps {
-                // slack.start()
-                checkout scm
-                installAnaconda()
+                node {
+                    checkout scm
+                    installAnaconda()
+                }
             }
         }
 
     }
-    
+
 }
