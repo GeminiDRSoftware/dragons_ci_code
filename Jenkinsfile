@@ -45,7 +45,7 @@ pipeline {
     } post {
         always {
             echo 'Sending notifications'
-            sendNotifications 'SUCCESSFUL'
+            // sendNotifications 'SUCCESSFUL'
         }
     }
 
