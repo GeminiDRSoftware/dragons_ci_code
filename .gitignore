@@ -4,3 +4,6 @@ pycharm-bash
 
 # MacOS Junk
 .DS_Store
+
+# Gradle
+build/
