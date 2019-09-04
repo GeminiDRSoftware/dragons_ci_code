@@ -1,5 +1,5 @@
 #!/usr/bin/env groovy
-/*
+/**
  * Jenkinsfile for DRAGONS
  *     by Bruno C. Quint (bquint at gemini dot edu)
  *
@@ -101,7 +101,7 @@ pipeline {
                         }
                         stage('CentOS 7') {
                             steps {
-                                echo "conda build for CentOS 7"    
+                                echo "conda build for CentOS 7"
                             }
                         }
                     }
