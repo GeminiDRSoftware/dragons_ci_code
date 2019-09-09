@@ -34,9 +34,9 @@ pipeline {
 
         stage('First Stage') {
             parallel {
-                stage('CentOS 7') {
+                stage('Agent #1') {
                     agent {
-                        label "centos7"
+                        label any
                     }
                     steps {
                         echo "Hello World!"
