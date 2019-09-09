@@ -1,5 +1,5 @@
 #!/usr/bin/env groovy
-/**
+/*
  * Jenkinsfile for DRAGONS
  *     by Bruno C. Quint (bquint at gemini dot edu)
  *
@@ -9,7 +9,7 @@
  *
  */
 
-@Library('dragons_ci_local@master') _
+@Library('dragons_ci@master') _
 
 
 pipeline {
