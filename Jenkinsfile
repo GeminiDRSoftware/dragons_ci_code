@@ -33,15 +33,13 @@ pipeline {
     stages {
 
         stage('First Stage') {
-            steps {
-                parallel {
-                    stage('CentOS 7') {
-                        agent {
-                            label "centos7"
-                        }
-                        steps {
-                            echo $env.NODENAME
-                        }
+            parallel {
+                stage('CentOS 7') {
+                    agent {
+                        label "centos7"
+                    }
+                    steps {
+                        echo "Hello World!"
                     }
                 }
             }
