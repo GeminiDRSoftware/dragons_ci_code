@@ -6,4 +6,4 @@ pycharm-bash
 .DS_Store
 
 # Gradle
-build/
+./build/
