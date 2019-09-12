@@ -39,17 +39,7 @@ pipeline {
                         label any
                     }
                     steps {
-                        sh  '''
-                            mkdir recipes
-                            cd recipes
-                            git init
-                            git config core.sparsecheckout true
-                            echo dragons >> .git/info/sparse-checkout
-                            git remote add -f origin https://github.com/GeminiDRSoftware/astroconda-gemini-internal.git
-                            git pull origin master
-                            ls -la
-                            cd -
-                            '''
+                        echo "Hello World"
                     }
                 }
             }
