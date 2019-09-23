@@ -8,6 +8,7 @@
  *
  */
 
+//noinspection GroovyUnusedAssignment
 @Library('dragons_ci@master') _
 
 
@@ -40,7 +41,7 @@ pipeline {
                     }
                     steps {
                         echo "Hello World"
-                        condaCreateEnv
+                        condaCreateEnv()
                     }
                 }
             }
