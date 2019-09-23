@@ -10,5 +10,5 @@ def call(String env_name, String env_file) {
     String parsedString = new String("And now this step received an argument: $env_name")
 
     echo parsedString
-    echo "And this is a second argument: $env_file"
+    echo "And this is a second argument: ${env_file}"
 }
