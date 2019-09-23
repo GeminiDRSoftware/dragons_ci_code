@@ -13,6 +13,7 @@ def call(String env_name, String env_file) {
 }
 */
 
-def call() {
+def call(String env_name) {
     echo "I am running from inside a custom step! That's so cool! \\o/"
+    echo "And now this step received an argument: $env_name"
 }

@@ -41,7 +41,7 @@ pipeline {
                     }
                     steps {
                         echo "Hello World"
-                        condaCreateEnv()
+                        condaCreateEnv "argument"
                     }
                 }
             }
