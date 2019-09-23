@@ -7,7 +7,7 @@ def call(String env_name, String env_file) {
     echo "I am running from inside a custom step! That's so cool! \\o/"
 
     //noinspection GroovyUnusedAssignment
-    String parsedString = "And now this step received an argument: $env_name".toString()
+    String parsedString = "And now this step received an argument: ".concat(env_name)
 
     echo parsedString
     echo "And this is a second argument: ${env_file}"
