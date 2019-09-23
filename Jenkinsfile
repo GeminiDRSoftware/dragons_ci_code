@@ -29,6 +29,8 @@ pipeline {
 
     environment {
         PATH = "$JENKINS_HOME/anaconda3/bin:$PATH"
+        CONDA_ENV_NAME = "py3"
+        CONDA_ENV_FILE = "/path/to/env/file/"
     }
 
     stages {
@@ -41,7 +43,7 @@ pipeline {
                     }
                     steps {
                         echo "Hello World"
-                        condaCreateEnv "argument", "other argument"
+                        condaCreateEnv "$CONDA_ENV_NAME", "$CONDA_ENV_FILE"
                     }
                 }
             }
