@@ -8,7 +8,7 @@ def call(String env_name, String env_file) {
     def env_definition = libraryResource "gemini/dragons/envs/${env_file}"
     echo "${env_definition}"
 
-    writeFile file: "$env_file", text: "$env_definition"
+    writeFile file: "${env_file}", text: "${env_definition}"
     sh "ls -lah"
     sh "echo $env_file"
 
