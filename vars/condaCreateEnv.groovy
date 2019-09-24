@@ -7,8 +7,8 @@ def call(String env_name, String env_file) {
 
     def env_definition = libraryResource "gemini/dragons/envs/${env_file}"
     println env_definition
-//    File conda_file = new File("${env_file}")
-//    conda_file.write env_definition
+    File conda_file = new File("${env_file}")
+    conda_file.write env_definition
 
     sh  """
         if conda info --envs | grep -q ${env_name}; then
