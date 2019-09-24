@@ -30,7 +30,7 @@ pipeline {
     environment {
         PATH = "$JENKINS_HOME/anaconda3/bin:$PATH"
         CONDA_ENV_NAME = "py3"
-        CONDA_ENV_FILE = "/path/to/env/file/"
+        CONDA_ENV_FILE = "python3.yml"
     }
 
     stages {
