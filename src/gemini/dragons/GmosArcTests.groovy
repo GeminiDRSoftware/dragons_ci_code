@@ -4,6 +4,8 @@
  */
 package gemini.dragons
 
+import jave.nio.file.Files
+
 
 class GmosArcTests implements Serializable {
 
@@ -32,6 +34,7 @@ class GmosArcTests implements Serializable {
         if (sourceFile.exists()) {
             steps.echo "Confirmed that file exists: ${sourceFile}"
             steps.echo "Will copy it to the target file: ${targetFile}"
+            Files.copy(sourceFile, tarFile)
 //             steps.archiveArtifacts tarFile.toString()
         } else {
             steps.echo "Could not find file: ${sourceFile}"
