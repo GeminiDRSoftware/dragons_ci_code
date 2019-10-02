@@ -16,7 +16,7 @@ class GmosArcTests implements Serializable {
     }
 
     void archivePlots() {
-        this.echo "Running 'archivePlots' from inside GmosArcTests"
+        steps.echo "Running 'archivePlots' from inside GmosArcTests"
     }
 
 }
