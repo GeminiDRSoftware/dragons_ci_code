@@ -19,7 +19,7 @@ class GmosArcTests implements Serializable {
 
     void archivePlots() {
         steps.echo "Running 'archivePlots' from inside GmosArcTests"
-        steps.echo "${env.DRAGONS_TEST_OUTPUTS}"
+//        steps.echo "${env.DRAGONS_TEST_OUTPUTS}"
     }
 
 }
