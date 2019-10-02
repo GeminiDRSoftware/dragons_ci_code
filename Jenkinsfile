@@ -38,9 +38,7 @@ pipeline {
         stage('First Stage') {
             parallel {
                 stage('Agent #1') {
-                    agent {
-                        label any
-                    }
+                    agent any
                     steps {
                         echo "Hello World"
                         condaCreateEnv "$CONDA_ENV_NAME", "$CONDA_ENV_FILE"
