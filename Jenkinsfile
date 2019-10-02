@@ -6,15 +6,15 @@
  * Required Plugins
  * -
  *
- *
  */
 
+//noinspection GroovyUnusedAssignment
 @Library('dragons_ci@master') _
 
 
 pipeline {
 
-    agent any
+    agent none
 
     // Polls Source Code Manager every hour
     triggers {
@@ -29,80 +29,22 @@ pipeline {
 
     environment {
         PATH = "$JENKINS_HOME/anaconda3/bin:$PATH"
-        CONDA_ENV_FILE = ".jenkins/conda_py3env_stable.yml"
-        CONDA_ENV_NAME = "py3_stable"
+        CONDA_ENV_NAME = "py3"
+        CONDA_ENV_FILE = "python3.yml"
     }
 
     stages {
 
         stage('First Stage') {
-            steps {
-                    echo 'Step 1'
-                    echo 'Step 2'
-                    echo 'Step 3'
-            }
-        }
-
-        stage('master branch stuff') {
-            agent any
-            when {
-                branch 'master'
-            }
-            steps {
-                echo 'run this stage - ony if the branch = master branch'
-                echo 'This branch will test '
-            }
-        }
-
-        stage('feature branch stuff') {
-            agent any
-            when {
-                branch "feature/*"
-            }
-            steps {
-                echo 'run this stage - only if the branch name started with feature/'
-            }
-        }
-
-        stage('hotfix branch stuff') {
-            agent any
-            when {
-                branch "hotfix/*"
-            }
-            steps {
-                echo 'run this stage - only if the branch name started with hotfix/'
-            }
-        }
-
-        stage('stable branch stuff') {
-            agent any
-            when {
-                branch "stable"
-            }
-            steps {
-                echo 'run this stage - ony if the branch = stable branch'
-            }
-        }
-
-        stage('release branch stuff') {
-
-            when {
-                branch "release/*"
-            }
-            failFast true
             parallel {
-                stage('build') {
-                    stages {
-                        stage('CentOS 6') {
-                            steps {
-                                echo "conda build for CentOS 6"
-                            }
-
-                        }
-                        stage('CentOS 7') {
-                            steps {
-                                echo "conda build for CentOS 7"
-                            }
+                stage('Agent #1') {
+                    agent any
+                    steps {
+                        echo "Started steps inside Agent #1"
+                        condaCreateEnv "$CONDA_ENV_NAME", "$CONDA_ENV_FILE"
+                        script {
+                            def gmosArcTests = new gemini.dragons.GmosArcTests(env, this)
+                            gmosArcTests.archivePlots()
                         }
                     }
                 }

@@ -1,0 +1,6 @@
+<strong>condaCreateEnv(String envname, String envfile)</strong>
+
+<p>
+    Creates a new Conda Virtual Environment called `envname` using the
+    definitions inside `envfile`.
+</p>

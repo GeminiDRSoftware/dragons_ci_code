@@ -1,5 +1,0 @@
-<strong>mainPipeline</strong>
-
-<p>
-    Runs the main Jenkins Pipeline if the branch name is `master`.
-</p>
