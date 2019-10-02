@@ -22,7 +22,7 @@ class GmosArcTests implements Serializable {
 
         def tarFile = new File(env.DRAGONS_TEST_OUTPUTS, this._path_to_plots)
 
-        if (tarFile.exits()) {
+        if (tarFile.exists()) {
             steps.echo "Confirmed that file exists: ${tarFile}"
         } else {
             steps.echo "Could not find file: ${tarFile}"
