@@ -43,7 +43,7 @@ pipeline {
                         echo "Hello World"
                         condaCreateEnv "$CONDA_ENV_NAME", "$CONDA_ENV_FILE"
                         script {
-                            def gmosArcTests = gemini.dragons.GmosArcTests()
+                            def gmosArcTests = new gemini.dragons.GmosArcTests()
                         }
                     }
                 }
