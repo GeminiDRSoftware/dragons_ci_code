@@ -40,7 +40,7 @@ pipeline {
                 stage('Agent #1') {
                     agent any
                     steps {
-                        echo "Hello World"
+                        echo "Started steps inside Agent #1"
                         condaCreateEnv "$CONDA_ENV_NAME", "$CONDA_ENV_FILE"
                         script {
                             def gmosArcTests = new gemini.dragons.GmosArcTests(this)
