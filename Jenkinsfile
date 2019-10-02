@@ -39,7 +39,7 @@ pipeline {
             parallel {
                 stage('Agent #1') {
                     agent {
-                        label "centos7"
+                        label any
                     }
                     steps {
                         echo "Hello World"
