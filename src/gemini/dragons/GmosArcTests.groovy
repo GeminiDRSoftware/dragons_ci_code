@@ -31,7 +31,7 @@ class GmosArcTests implements Serializable {
 
         if (sourceFile.exists()) {
             steps.echo "Confirmed that file exists: ${sourceFile}"
-//             steps.echo "Will copy it to the target file: ${targetFile}"
+            steps.echo "Will copy it to the target file: ${targetFile}"
 //             steps.archiveArtifacts tarFile.toString()
         } else {
             steps.echo "Could not find file: ${sourceFile}"
