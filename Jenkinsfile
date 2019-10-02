@@ -10,7 +10,7 @@
 
 //noinspection GroovyUnusedAssignment
 @Library('dragons_ci@master') _
-import gemini.dragons.GmosArcTests
+
 
 pipeline {
 
@@ -43,7 +43,7 @@ pipeline {
                         echo "Hello World"
                         condaCreateEnv "$CONDA_ENV_NAME", "$CONDA_ENV_FILE"
                         script {
-                            def gmosArcTests = GmosArcTests()
+                            def gmosArcTests = gemini.dragons.GmosArcTests()
                         }
                     }
                 }
