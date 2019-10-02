@@ -19,7 +19,8 @@ class GmosArcTests implements Serializable {
 
     void archivePlots() {
         steps.echo "Running 'archivePlots' from inside GmosArcTests"
-        steps.echo "${env.DRAGONS_TEST_OUTPUTS}"
+        def tarFile = new File(env.DRAGONS_TEST_OUTPUTS, this._path_to_plots)
+        steps.echo "${tarFile}"
     }
 
 }
