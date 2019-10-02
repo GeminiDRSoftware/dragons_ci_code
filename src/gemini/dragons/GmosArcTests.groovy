@@ -19,10 +19,6 @@ class GmosArcTests implements Serializable {
 
     void archivePlots() {
 
-        File tarFile = null
-        String tarFileName = ""
-        boolean fileExists = false
-
         steps.echo "Running 'archivePlots' from inside GmosArcTests"
 
         tarFile = new File(env.DRAGONS_TEST_OUTPUTS, this._path_to_plots)
@@ -30,8 +26,7 @@ class GmosArcTests implements Serializable {
 
         if (fileExists) {
             steps.echo "Confirmed that file exists: ${tarFile}"
-            tarFileName = tarFile.toString()
-            steps.archiveArtifacts tarFileName
+            steps.archiveArtifacts "${tarFile}"
         } else {
             steps.echo "Could not find file: ${tarFile}"
         }
