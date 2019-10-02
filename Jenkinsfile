@@ -42,10 +42,9 @@ pipeline {
                     steps {
                         echo "Started steps inside Agent #1"
                         condaCreateEnv "$CONDA_ENV_NAME", "$CONDA_ENV_FILE"
-
-                        def gmosArcTests = new gemini.dragons.GmosArcTests(env, this)
-                        gmosArcTests.archivePlots()
-
+                        script {
+                            def gmosArcTests = new gemini.dragons.GmosArcTests(this)
+                        }
                     }
                 }
             }
