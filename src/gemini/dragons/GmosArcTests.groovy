@@ -14,7 +14,7 @@ class GmosArcTests implements Serializable {
     GmosArcTests(env, steps) {
         this.env = env
         this.steps = steps
-        this._path_to_plots = "process_arcs/GMOS/tst_gmos_lsspec_arcs.tar.gz"
+        this._path_to_plots = "process_arcs/GMOS/test_gmos_lsspec_arcs.tar.gz"
     }
 
     void archivePlots() {
@@ -24,6 +24,7 @@ class GmosArcTests implements Serializable {
 
         if (tarFile.exists()) {
             steps.echo "Confirmed that file exists: ${tarFile}"
+            steps.archiveArtifacts tarFile
         } else {
             steps.echo "Could not find file: ${tarFile}"
         }
