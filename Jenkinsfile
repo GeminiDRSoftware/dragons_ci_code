@@ -42,6 +42,8 @@ pipeline {
                     steps {
                         echo "Hello World"
                         condaCreateEnv "$CONDA_ENV_NAME", "$CONDA_ENV_FILE"
+                        def gmosArcTests = gemini.dragons.GmosArcTests()
+                        gmosArcTests.archivePlots()
                     }
                 }
             }
