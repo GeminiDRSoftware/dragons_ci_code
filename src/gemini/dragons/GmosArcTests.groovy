@@ -24,7 +24,7 @@ class GmosArcTests implements Serializable {
 
         if (tarFile.exists()) {
             steps.echo "Confirmed that file exists: ${tarFile}"
-            steps.archiveArtifacts tarFile
+            steps.archiveArtifacts tarFile.toString()
         } else {
             steps.echo "Could not find file: ${tarFile}"
         }
