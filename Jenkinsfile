@@ -42,7 +42,9 @@ pipeline {
                     steps {
                         echo "Hello World"
                         condaCreateEnv "$CONDA_ENV_NAME", "$CONDA_ENV_FILE"
-                        def gmosArcTests = GmosArcTests()
+                        script {
+                            def gmosArcTests = GmosArcTests()
+                        }
                     }
                 }
             }
