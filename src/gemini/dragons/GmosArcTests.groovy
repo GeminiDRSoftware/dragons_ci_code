@@ -23,13 +23,15 @@ class GmosArcTests implements Serializable {
 
         def sourceFile = new File(env.DRAGONS_TEST_OUTPUTS, this._path_to_plots)
         def targetFolder = new File("plots/")
+        def targetFile = new File(targetFolder, sourceFile.getName())
 
         if (! targetFolder.exists()) {
             targetFolder.mkdir()
         }
 
         if (sourceFile.exists()) {
-//             steps.echo "Confirmed that file exists: ${tarFile}"
+            steps.echo "Confirmed that file exists: ${tarFile}"
+//             steps.echo "Will copy it to the target file: ${targetFile}"
 //             steps.archiveArtifacts tarFile.toString()
         } else {
             steps.echo "Could not find file: ${tarFile}"
