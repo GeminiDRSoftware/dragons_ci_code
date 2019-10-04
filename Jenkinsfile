@@ -42,6 +42,7 @@ pipeline {
                     steps {
                         echo "Started steps inside Agent #1"
                         condaCreateEnv "$CONDA_ENV_NAME", "$CONDA_ENV_FILE"
+                        sh 'python -c "import os; print(os.environ)"'
                         script {
                             def gmosArcTests = new gemini.dragons.GmosArcTests(env, this)
                             gmosArcTests.archivePlots()
