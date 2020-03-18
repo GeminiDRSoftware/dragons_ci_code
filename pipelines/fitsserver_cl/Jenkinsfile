@@ -23,12 +23,16 @@ pipeline {
 
   stages{
     stage('Ping fits server') {
-      echo 'Ping fits server'
-      sh 'ping fits.cl.gemini.edu'
+      steps {
+        echo 'Ping fits server'
+        sh 'ping fits.cl.gemini.edu'
+      }
     }
     stage('Verify response') {
-      echo 'Ping fits server'
-      sh 'curl fits.cl.gemini.edu/searchform'
+      steps {  
+        echo 'Ping fits server'
+        sh 'curl fits.cl.gemini.edu/searchform'
+      }  
     }
   }
 
