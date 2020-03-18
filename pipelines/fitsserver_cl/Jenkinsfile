@@ -1,0 +1,35 @@
+#!/usr/bin/env groovy
+/*
+ * Jenkins Pipeline for FitsServer at Chile
+ * ========================================
+ *
+ * Verifies the if the fitsserver is responsive.
+ *
+ * Required plug-ins:
+ * -
+ */
+
+@Library('dragons_ci@master') _
+
+pipeline {
+
+  agent {
+    label 'master'
+  }
+
+  triggers {
+    cron('H * * * * *')
+  }
+
+  stages{
+    stage('Ping fits server') {
+      echo 'Ping fits server'
+      sh 'ping fits.cl.gemini.edu'
+    }
+    stage('Verify response') {
+      echo 'Ping fits server'
+      sh 'curl fits.cl.gemini.edu/searchform'
+    }
+  }
+
+}
