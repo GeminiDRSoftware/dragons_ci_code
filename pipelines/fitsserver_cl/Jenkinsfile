@@ -25,7 +25,7 @@ pipeline {
     stage('Ping fits server') {
       steps {
         echo 'Ping fits server'
-        sh 'ping fits.cl.gemini.edu'
+        sh 'ping -c 4 fits.cl.gemini.edu'
       }
     }
     stage('Verify response') {
