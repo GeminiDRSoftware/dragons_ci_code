@@ -36,4 +36,10 @@ pipeline {
     }
   }
 
+  post {
+    failure {
+      sendNotifications 'FAILED'
+    }
+  }
+
 }
