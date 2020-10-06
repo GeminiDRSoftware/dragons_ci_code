@@ -16,13 +16,17 @@ pipeline {
 
     agent none
 
-    // Polls Source Code Manager every hour
     triggers {
-        pollSCM('H * * * *')
+
+        // Polls Source Code Manager every 10 minutes
+        pollSCM('H/10 * * * *')
+
+        // Run job every 10 minutes
+        pollSCM('H/10 * * * *')
+
     }
 
     options {
-        skipDefaultCheckout(true)
         buildDiscarder(logRotator(numToKeepStr: '10'))
         timestamps()
     }
@@ -35,21 +39,21 @@ pipeline {
 
     stages {
 
-        stage('First Stage') {
-            parallel {
-                stage('Agent #1') {
-                    agent any
-                    steps {
-                        echo "Started steps inside Agent #1"
-                        condaCreateEnv "$CONDA_ENV_NAME", "$CONDA_ENV_FILE"
-                        script {
-                            def gmosArcTests = new gemini.dragons.GmosArcTests(env, this)
-                            gmosArcTests.archivePlots()
-                        }
-                    }
-                }
-            }
-        }
+//         stage('First Stage') {
+//             parallel {
+//                 stage('Agent #1') {
+//                     agent any
+//                     steps {
+//                         echo "Started steps inside Agent #1"
+//                         condaCreateEnv "$CONDA_ENV_NAME", "$CONDA_ENV_FILE"
+//                         script {
+//                             def gmosArcTests = new gemini.dragons.GmosArcTests(env, this)
+//                             gmosArcTests.archivePlots()
+//                         }
+//                     }
+//                 }
+//             }
+//         }
 
     }
 
