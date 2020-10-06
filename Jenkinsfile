@@ -61,6 +61,15 @@ pipeline {
                     }
                 }
 
+                stage('SCM Change') {
+                    agent any
+                    // when { expression { return isTriggeredByCron() } }
+                    steps {
+                        echo "This is a step inside a stage started by SCM Change"
+                        echo "${currentBuild.getBuildCauses()}"
+                    }
+                }
+
             }
         }
 
