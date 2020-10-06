@@ -48,6 +48,7 @@ pipeline {
                     when { expression { return isTriggeredByUser() } }
                     steps {
                         echo "This is a step inside a stage started by a user"
+                        echo "${currentBuild.getBuildCauses()}"
                     }
                 }
 
@@ -56,6 +57,7 @@ pipeline {
                     when { expression { return isTriggeredByCron() } }
                     steps {
                         echo "This is a step inside a stage started by cron job"
+                        echo "${currentBuild.getBuildCauses()}"
                     }
                 }
 
