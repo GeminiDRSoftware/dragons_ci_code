@@ -34,9 +34,10 @@ pipeline {
     stages {
 
         stage('Simplest Stage') {
-            agent any
+            agent master
             steps {
                 echo "This is a step inside the 'Simplest Stage'"
+                checkout scm
             }
         }
 
@@ -63,7 +64,7 @@ pipeline {
 
                 stage('SCM Change') {
                     agent any
-                    // when { expression { return isTriggeredByCron() } }
+                    when { expression { return isTriggeredBySCMChange() } }
                     steps {
                         echo "This is a step inside a stage started by SCM Change"
                         echo "${isTriggeredBySCMChange()}"
