@@ -18,7 +18,7 @@ pipeline {
     // Set how the Job will start
     triggers {
         // Polls Source Code Manager every 10 minutes
-        pollSCM('* * * * *')
+        pollSCM('H/10 * * * *')
         // Run job every 30 minutes
         cron('H/30 * * * *')
     }
