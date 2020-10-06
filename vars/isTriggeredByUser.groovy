@@ -5,5 +5,6 @@
  */
 def call() {
     def userCause = 'hudson.model.Cause$UserIdCause'
-    return currentBuild.getBuildCauses(userCause) != null
+    def causeList = currentBuild.getBuildCauses(userCause)
+    return !(causeList.isEmpty())
 }
