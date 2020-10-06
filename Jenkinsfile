@@ -18,7 +18,7 @@ pipeline {
     // Set how the Job will start
     triggers {
         // Polls Source Code Manager every 10 minutes
-        pollSCM('H/5 * * * *')
+        pollSCM('* * * * *')
         // Run job every 30 minutes
         cron('H/30 * * * *')
     }
@@ -34,7 +34,7 @@ pipeline {
     stages {
 
         stage('Simplest Stage') {
-            agent { label "master" } 
+            agent { label "master" }
             steps {
                 echo "This is a step inside the 'Simplest Stage'"
                 checkout scm
