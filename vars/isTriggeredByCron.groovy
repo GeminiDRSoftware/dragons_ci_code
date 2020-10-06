@@ -5,5 +5,5 @@
  */
 def call() {
     def cronCause = 'hudson.triggers.TimerTrigger$TimerTriggerCause'
-    return currentBuild.getBuildCauses("${cronCause}") != null
+    return currentBuild.getBuildCauses(cronCause) != null
 }
