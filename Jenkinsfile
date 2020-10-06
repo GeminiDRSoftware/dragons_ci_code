@@ -24,6 +24,8 @@ pipeline {
     }
 
     options {
+        // Checkout repository to keep track of changes
+        skipDefaultCheckout(false)
         // Persist artifacts and console output for the specific number
         // of recent Pipeline runs
         buildDiscarder(logRotator(numToKeepStr: '10'))
