@@ -51,13 +51,13 @@ pipeline {
                     }
                 }
 
-                // stage('Cron') {
-                //     agent any
+                stage('Cron') {
+                    agent any
                 //     when { expression { return isTriggeredByCron() } }
-                //     steps {
-                //         echo "This is a step inside a stage started by cron job"
-                //     }
-                // }
+                    steps {
+                        echo "This is a step inside a stage started by cron job"
+                    }
+                }
 
             }
         }
