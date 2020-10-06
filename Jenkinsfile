@@ -7,7 +7,7 @@
  *
  */
 
-@Library('dragons_ci@feature/isTriggeredBySCMChange') _
+@Library('dragons_ci@master') _
 
 
 pipeline {
@@ -36,10 +36,9 @@ pipeline {
     stages {
 
         stage('Simplest Stage') {
-            agent { label "master" }
+            agent any
             steps {
                 echo "This is a step inside the 'Simplest Stage'"
-                checkout scm
             }
         }
 
