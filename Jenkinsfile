@@ -40,6 +40,14 @@ pipeline {
             }
         }
 
+        stage('When started by user') {
+            agent any
+            when { expression { return isTriggeredByUser() } }
+            steps {
+                echo "This is a step inside a stage started by a user"
+            }
+        }
+
     }
 
     post {
