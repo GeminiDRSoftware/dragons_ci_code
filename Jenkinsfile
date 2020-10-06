@@ -1,44 +1,54 @@
 #!/usr/bin/env groovy
 /*
- * Jenkinsfile for DRAGONS
- *     by Bruno C. Quint (bquint at gemini dot edu)
+ * Jenkinsfile for dragons_ci
  *
- * Required Plugins
- * -
+ *   Contains several examples of how to create Jobs using a Jenkinsfile
+ *     by Bruno C. Quint (bruno.quint@noirlab.edu)
  *
  */
 
-//noinspection GroovyUnusedAssignment
 @Library('dragons_ci@master') _
 
 
 pipeline {
 
+    // Set agent inside stages
     agent none
 
+    // Set how the Job will start
     triggers {
-
         // Polls Source Code Manager every 10 minutes
         pollSCM('H/10 * * * *')
-
-        // Run job every 10 minutes
-        pollSCM('H/10 * * * *')
-
+        // Run job every 30 minutes
+        cron('H/30 * * * *')
     }
 
     options {
+        // Persist artifacts and console output for the specific number
+        // of recent Pipeline runs
         buildDiscarder(logRotator(numToKeepStr: '10'))
+        // Adds timestamps for each line of a multi-branch pipeline
         timestamps()
-    }
-
-    environment {
-        PATH = "$JENKINS_HOME/anaconda3/bin:$PATH"
-        CONDA_ENV_NAME = "py3"
-        CONDA_ENV_FILE = "python3.yml"
     }
 
     stages {
 
+        stage('Simplest Stage') {
+            agent any
+            steps {
+                echo "This is a step inside the 'Simplest Stage'"
+            }
+        }
+
+    }
+
+    post {
+        always {
+            echo "This will always run after all stages"
+        }
+    }
+
+}
 //         stage('First Stage') {
 //             parallel {
 //                 stage('Agent #1') {
@@ -54,13 +64,3 @@ pipeline {
 //                 }
 //             }
 //         }
-
-    }
-
-    post {
-        always {
-            echo "This will run always"
-        }
-    }
-
-}
