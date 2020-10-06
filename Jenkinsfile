@@ -40,11 +40,17 @@ pipeline {
             }
         }
 
-        stage('When started by user') {
-            agent any
-            when { expression { return isTriggeredByUser() } }
-            steps {
-                echo "This is a step inside a stage started by a user"
+        stage('Run when triggered by') {
+            parallel {
+
+                stage('User') {
+                    agent any
+                    when { expression { return isTriggeredByUser() } }
+                    steps {
+                        echo "This is a step inside a stage started by a user"
+                    }
+                }
+
             }
         }
 
