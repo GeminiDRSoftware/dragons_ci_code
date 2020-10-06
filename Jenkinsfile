@@ -34,7 +34,7 @@ pipeline {
     stages {
 
         stage('Simplest Stage') {
-            agent master
+            agent { label "master" } 
             steps {
                 echo "This is a step inside the 'Simplest Stage'"
                 checkout scm
