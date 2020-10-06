@@ -1,0 +1,5 @@
+<strong>isTriggeredByUser()</strong>
+
+<p>
+    Checks if the Job was triggered by a user.
+</p>

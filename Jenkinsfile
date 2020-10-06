@@ -7,7 +7,7 @@
  *
  */
 
-@Library('dragons_ci@master') _
+@Library('dragons_ci@feature/isTriggeredByUser') _
 
 
 pipeline {
@@ -37,6 +37,30 @@ pipeline {
             agent any
             steps {
                 echo "This is a step inside the 'Simplest Stage'"
+            }
+        }
+
+        stage('Run when triggered by') {
+            parallel {
+
+                stage('User') {
+                    agent any
+                    when { expression { return isTriggeredByUser() } }
+                    steps {
+                        echo "This is a step inside a stage started by a user"
+                        echo "${isTriggeredByUser()}"
+                    }
+                }
+
+                stage('Cron') {
+                    agent any
+                    when { expression { return isTriggeredByCron() } }
+                    steps {
+                        echo "This is a step inside a stage started by cron job"
+                        echo "${isTriggeredByCron()}"
+                    }
+                }
+
             }
         }
 
