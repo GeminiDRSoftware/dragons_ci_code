@@ -1,4 +1,4 @@
-<strong>isTriggeredByUser()</strong>
+<strong>isTriggeredByCron()</strong>
 
 <p>
     Checks if the Job was triggered by the cron table
