@@ -53,7 +53,7 @@ pipeline {
 
                 stage('Cron') {
                     agent any
-                //     when { expression { return isTriggeredByCron() } }
+                    when { expression { return isTriggeredByCron() } }
                     steps {
                         echo "This is a step inside a stage started by cron job"
                     }
