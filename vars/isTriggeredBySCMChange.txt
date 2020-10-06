@@ -1,4 +1,4 @@
-<strong>isTriggeredByCron()</strong>
+<strong>isTriggeredBySCMChange()</strong>
 
 <p>
     Checks if the Job was triggered by the cron table

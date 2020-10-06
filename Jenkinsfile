@@ -24,6 +24,8 @@ pipeline {
     }
 
     options {
+        // Checkout repository to keep track of changes
+        skipDefaultCheckout(false)
         // Persist artifacts and console output for the specific number
         // of recent Pipeline runs
         buildDiscarder(logRotator(numToKeepStr: '10'))
@@ -58,6 +60,15 @@ pipeline {
                     steps {
                         echo "This is a step inside a stage started by cron job"
                         echo "${isTriggeredByCron()}"
+                    }
+                }
+
+                stage('SCM Change') {
+                    agent any
+                    when { expression { return isTriggeredBySCMChange() } }
+                    steps {
+                        echo "This is a step inside a stage started by SCM Change"
+                        echo "${isTriggeredBySCMChange()}"
                     }
                 }
 
