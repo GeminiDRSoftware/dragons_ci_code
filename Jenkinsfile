@@ -7,7 +7,7 @@
  *
  */
 
-@Library('dragons_ci@feature/isTriggeredByUser') _
+@Library('dragons_ci@master') _
 
 
 pipeline {
