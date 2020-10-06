@@ -7,7 +7,7 @@
  *
  */
 
-@Library('dragons_ci@master') _
+@Library('dragons_ci@feature/isTriggeredBySCMChange') _
 
 
 pipeline {
