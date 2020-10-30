@@ -62,7 +62,7 @@ pipeline {
             post {
                 always {
                     echo 'Run always after stage'
-                    archiveArtifacts artifacts: 'foo/*', allowEmptyArchive: true
+                    archiveArtifacts artifacts: 'foo', allowEmptyArchive: true
                 }
             }
         }
