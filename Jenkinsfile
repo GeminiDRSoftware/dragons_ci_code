@@ -99,8 +99,6 @@ pipeline {
     post {
         always {
             echo 'I always run'
-            sh 'pwd'
-            sh 'ls'
             archiveArtifacts artifacts: 'foo/*', allowEmptyArchive: true
         }
         success {
