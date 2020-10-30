@@ -56,6 +56,7 @@ pipeline {
                 sh "touch foo/file_1"
                 sh "touch foo/file_2"
                 sh "touch foo/file_3"
+                sh "ls foo/"
             }
         }
 
