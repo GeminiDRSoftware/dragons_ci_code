@@ -98,10 +98,6 @@ pipeline {
         always {
             archiveArtifacts artifacts: 'foo/*', fingerprint: true
         }
-        success {
-        }
-        failure {
-        }
     }
 
 }
