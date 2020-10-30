@@ -52,7 +52,7 @@ pipeline {
             agent any
             steps {
                 echo "This is a step inside the 'Simplest Stage'"
-                sh "mkdir foo"
+                sh "mkdir -p foo"
                 sh "touch foo/file_1"
                 sh "touch foo/file_2"
                 sh "touch foo/file_3"
