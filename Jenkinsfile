@@ -97,7 +97,7 @@ pipeline {
     post {
         always {
             echo "This will always run after all stages"
-            archiveArtifacts artifacts: "foo"
+            archiveArtifacts artifacts: "foo/**"
         }
         success {
             echo "This will run on success"
