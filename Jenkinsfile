@@ -96,14 +96,11 @@ pipeline {
 
     post {
         always {
-            echo "This will always run after all stages"
             archiveArtifacts artifacts: 'foo/*', fingerprint: true
         }
         success {
-            echo "This will run on success"
         }
         failure {
-            echo "This will run on failures"
         }
     }
 
