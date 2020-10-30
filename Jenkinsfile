@@ -60,6 +60,12 @@ pipeline {
                 sh "ls foo/"
             }
         }
+        post {
+            always {
+                echo 'Run always after stage'
+                archiveArtifacts artifacts: 'foo/*', allowEmptyArchive: true
+            }
+        }
 
         stage('Run when triggered by') {
             parallel {
@@ -99,7 +105,6 @@ pipeline {
     post {
         always {
             echo 'I always run'
-            archiveArtifacts artifacts: 'foo/*', allowEmptyArchive: true
         }
         success {
             echo 'I succeeded!'
