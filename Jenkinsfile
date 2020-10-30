@@ -98,8 +98,7 @@ pipeline {
     post {
         always {
             echo 'I always run'
-            node {
-              archiveArtifacts artifacts: 'foo'
+            archiveArtifacts artifacts: 'foo/*'
             }
         }
         success {
