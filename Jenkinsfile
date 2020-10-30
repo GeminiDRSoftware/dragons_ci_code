@@ -96,7 +96,13 @@ pipeline {
 
     post {
         always {
-            archiveArtifacts artifacts: 'foo/*', fingerprint: true
+            echo 'I always run'
+        }
+        success {
+            echo 'I succeeded!'
+        }
+        failure {
+            echo 'I failed! :('
         }
     }
 
