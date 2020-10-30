@@ -52,6 +52,7 @@ pipeline {
             agent any
             steps {
                 echo "This is a step inside the 'Simplest Stage'"
+                sh "pwd"
                 sh "mkdir -p foo"
                 sh "touch foo/file_1"
                 sh "touch foo/file_2"
@@ -98,7 +99,9 @@ pipeline {
     post {
         always {
             echo 'I always run'
-            archiveArtifacts artifacts: 'foo/*'
+            sh 'pwd'
+            sh 'ls'
+            archiveArtifacts artifacts: 'foo/*', allowEmptyArchive: true
         }
         success {
             echo 'I succeeded!'
