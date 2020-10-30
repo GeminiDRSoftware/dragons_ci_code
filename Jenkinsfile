@@ -59,11 +59,11 @@ pipeline {
                 sh "touch foo/file_3"
                 sh "ls foo/"
             }
-        }
-        post {
-            always {
-                echo 'Run always after stage'
-                archiveArtifacts artifacts: 'foo/*', allowEmptyArchive: true
+            post {
+                always {
+                    echo 'Run always after stage'
+                    archiveArtifacts artifacts: 'foo/*', allowEmptyArchive: true
+                }
             }
         }
 
