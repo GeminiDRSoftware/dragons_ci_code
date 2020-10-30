@@ -98,7 +98,9 @@ pipeline {
     post {
         always {
             echo 'I always run'
-            archiveArtifacts artifacts: 'foo'
+            node {
+              archiveArtifacts artifacts: 'foo'
+            }
         }
         success {
             echo 'I succeeded!'
