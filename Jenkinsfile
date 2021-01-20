@@ -7,7 +7,7 @@
  *
  */
 
-@Library('dragons_ci@feat/stage_on_commit') _
+@Library('dragons_ci@master') _
 
 
 pipeline {
