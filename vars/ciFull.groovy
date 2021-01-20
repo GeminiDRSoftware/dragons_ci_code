@@ -5,5 +5,5 @@
  */
 def call() {
     result = sh (script: "git log -1 | grep '.*\\[ci full\\].*'", returnStatus: true)
-    return result
+    return (result != 0)
 }
