@@ -114,7 +114,7 @@ pipeline {
                     agent any
                     when { expression { return ciFull() } }
                     steps {
-                        echo 'I will be here if you want. But not always. '
+                        echo 'I will be here if you want. But not always.'
                     }
                 }
 
