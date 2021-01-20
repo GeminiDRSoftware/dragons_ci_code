@@ -114,7 +114,6 @@ pipeline {
                     agent any
                     when { expression { return ciFull() } }
                     steps {
-                        echo 'Let me trigger a commit'
                         echo 'I will be here if you want. But not always.'
                     }
                 }
