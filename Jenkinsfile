@@ -100,7 +100,7 @@ pipeline {
             }
         }
 
-        stage('Run ...') {
+        stage('Run when') {
             parallel {
 
                 stage('always') {
