@@ -100,6 +100,27 @@ pipeline {
             }
         }
 
+        stage('Run when commit message has [ci full]') {
+            parallel {
+
+                stage('Always Run') {
+                    agent any
+                    steps {
+                        echo "I will always be here for you."
+                    }
+                }
+
+                stage('Only when you ask in a commit') {
+                    agent any
+                    when { expression { return ciFull() } }
+                    steps {
+                        echo 'I will be here if you want. But not always.'
+                    }
+                }
+
+            }
+        }
+
     }
 
     post {
