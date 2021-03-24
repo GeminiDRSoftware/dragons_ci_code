@@ -11,7 +11,9 @@ def call(String buildStatus = 'STARTED') {
     // Default values
     def color = 'RED'
     def colorCode = '#cc0000'
-    def message = "${buildStatus}: Job '${env.JOB_NAME} [<${env.RUN_DISPLAY_URL}|${env.BUILD_NUMBER}>]'"
+    def message = """
+        ${buildStatus}: Job '${env.JOB_NAME} [<${env.RUN_DISPLAY_URL}|${env.BUILD_NUMBER}>]
+         - <${env.BUILD_URL}/consoleText|(Raw text traceback)>'"""
 
     def details = """<p>${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p><br>
         <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>"""
