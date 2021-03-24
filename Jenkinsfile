@@ -7,7 +7,7 @@
  *
  */
 
-@Library('dragons_ci@master') _
+@Library('dragons_ci@slackMessage') _
 
 
 pipeline {
@@ -129,9 +129,11 @@ pipeline {
         }
         success {
             echo 'I succeeded!'
+            sendNotifications 'SUCCESSFUL'
         }
         failure {
             echo 'I failed! :('
+            sendNotifications 'FAILED'
         }
     }
 
