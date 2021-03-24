@@ -7,7 +7,7 @@
  *
  */
 
-@Library('dragons_ci@slackMessage') _
+@Library('dragons_ci@master') _
 
 
 pipeline {
