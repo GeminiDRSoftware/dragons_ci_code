@@ -11,7 +11,7 @@ def call(String buildStatus = 'STARTED') {
     // Default values
     def color = 'RED'
     def colorCode = '#cc0000'
-    def jobName = '${env.JOB_NAME}'.replace("%2F", "/")
+    def jobName = "${env.JOB_NAME}".replace("%2F", "/")
     def message = "${buildStatus}: Job '${jobName} [<${env.RUN_DISPLAY_URL}|${env.BUILD_NUMBER}>] (<${env.BUILD_URL}consoleText|Raw text traceback>)'"
 
     def details = """<p>${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p><br>
