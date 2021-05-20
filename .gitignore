@@ -2,6 +2,9 @@
 .idea
 pycharm-bash
 
+# Sphinx
+**/docs/_build/*
+
 # MacOS Junk
 .DS_Store
 
